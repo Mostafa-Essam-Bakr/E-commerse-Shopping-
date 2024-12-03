@@ -1,0 +1,57 @@
+/* تفعيل التمرير السلس على الحاوية */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* منع التمرير الأفقي */
+  width: 100%;
+  display: block;
+  font-family: 'Arial', sans-serif; /* اختيار خط عصري */
+  background: #fafafa; /* خلفية فاتحة */
+}
+
+/* تفعيل التمرير السلس باستخدام CSS */
+html {
+  scroll-behavior: smooth; /* تفعيل التمرير السلس لجميع الروابط والتمريرات */
+  width: 100%;
+}
+
+/* الحاوية العامة */
+.parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 4000px; /* تعديل الارتفاع إلى 4000px */
+  width: 100%;
+  background: linear-gradient(135deg, #6b4f98, #2d2f58);
+}
+
+/* تعديل مظهر النصوص أو المحتويات */
+.scroll-content {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* رفع العنصر عند التمرير عليه */
+.scroll-content:hover {
+  transform: translateY(-10px); /* تأثير رفع العنصر عند التمرير عليه */
+}
+
+/* تحسين الاستجابة للصفحات الصغيرة */
+@media (max-width: 768px) {
+  /* في الشاشات الصغيرة، اضبط التأثيرات لتكون أكثر بساطة */
+  .scroll-content {
+    padding: 2rem;
+    box-shadow: none;
+  }
+}
+.btpric {
+  display: flex;
+  align-items: center;
+  gap: 43px;
+}

@@ -1,0 +1,595 @@
+/* حاوية الصفحة */
+.parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, #6b4f98, #2d2f58);
+}
+
+/* تعديل للصور */
+.imgp {
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imgp:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* كرت العرض */
+.pcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  border-radius: 15px;
+  height: 536px;
+  width: 300px;
+  background: #2d2f58;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden; /* لمنع العناصر من الخروج عن حدود البطاقة */
+}
+
+/* تأثير عند التمرير على البطاقة */
+.pcard:hover {
+  transform: translateY(-10px); /* رفع البطاقة قليلاً عند التمرير عليها */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 20px; /* زيادة الظل عند التمرير */
+  background-color: #3e416c; /* تغيير اللون الخلفي عند التمرير */
+}
+
+/* تحسين النصوص الداخلية في البطاقة */
+.pcard .content {
+  text-align: center;
+  color: #fff; /* تحديد لون النص الأبيض */
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* تحسين الاستجابة على الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .pcard {
+    width: 250px; /* تقليص العرض على الشاشات الصغيرة */
+    height: 450px; /* تقليص الارتفاع على الشاشات الصغيرة */
+    margin-left: 0.5rem; /* تقليل الهامش الجانبي */
+    padding: 1rem; /* تقليص الحشو */
+  }
+}
+
+/* توزيع الكرت داخل الشبكة */
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+@media (min-width: 640px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* شاشات صغيرة: عمودين */
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr); /* شاشات متوسطة: 3 أعمدة */
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr); /* شاشات كبيرة: 4 أعمدة */
+  }
+}
+
+/* شريط التنقل */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000000cc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 82%);
+}
+
+/* أزرار */
+.btn {
+  color: #fff;
+  background-color: #ff4081;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 30px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1a237e;
+  color: #fff;
+}
+
+/* حواف البطاقات */
+.pcard .group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* النصوص في البطاقات */
+.pparent {
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0.25rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 80%;
+}
+
+.pparent2 {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 0.25rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 80%;
+}
+
+/* السعر */
+.price {
+  color: #ff4081;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* تأثير hover على الرابط */
+.ulleft a {
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.ulleft a:hover {
+  color: #ff4081;
+}
+
+/* التأثيرات المتقدمة على الأزرار */
+.btnr {
+  color: #00ff22;
+  border: 2px solid #ffffff;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 0.25rem 0.75rem;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btnr:hover {
+  background-color: #ff4081;
+  color: #fff;
+}
+/* حاوية الشريط العلوي */
+
+/* حاوية الشعار */
+.logo-container {
+  margin-left: 1.25rem;
+}
+
+.logo {
+  height: 56px; /* يمكن تعديل الحجم حسب الحاجة */
+  filter: invert(1); /* تأثير العكس على الألوان */
+}
+
+/* الروابط في الشريط */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  color: white;
+  font-size: 1.125rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links a:hover {
+  color: #38bdf8; /* تغيير اللون عند التمرير */
+}
+
+/* حاوية سلة التسوق */
+.cart-container {
+  position: relative;
+}
+
+/* أيقونة سلة التسوق */
+.cart-icon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* عدد العناصر في سلة التسوق */
+.cart-count {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  background-color: #10b981; /* لون أخضر */
+  color: white;
+  font-size: 0.75rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  animation: bounce 0.5s infinite;
+}
+
+/* تأثير الباونس عند ظهور عدد العناصر */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* صفحة الكارت*/
+/* Cart.css */
+
+/* تنسيق الحاوية الرئيسية */
+/* Cart.css */
+
+/* التنسيق للحاوية الرئيسية */
+.cart-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 16px;
+  position: relative;
+}
+
+/* التنسيق لصورة المنتج في السلة */
+.imgcart {
+  width: 300px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* التنسيق للحالة التي يوجد فيها سلة */
+.cart-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* لضبط ترتيب العناصر بشكل أفضل على الشاشات الصغيرة */
+  gap: 16px;
+}
+
+/* التنسيق للمنتجات */
+.cart-items {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* كل منتج في السلة مع أنيميشن */
+.cart-item {
+  position: relative;
+  animation: fadeIn 0.5s ease-out; /* إضافة أنيميشن للظهور */
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.cart-item:hover {
+  transform: scale(1.05); /* تأثير تكبير بسيط عند المرور بالماوس */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* التنسيق للحالة التي لا توجد فيها سلة */
+.empty-cart {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cart-summary-container {
+  position: fixed;
+  right: 16px;
+  top: 120px;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.cart-summary-title {
+  text-transform: uppercase;
+  color: #16a34a; /* أخضر فاتح */
+  font-weight: 600;
+}
+
+.cart-summary-subtitle {
+  text-transform: uppercase;
+  color: #16a34a;
+  font-weight: 700;
+  font-size: 2.25rem;
+}
+
+.cart-summary-item-count,
+.cart-summary-total {
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.checkout-button {
+  margin-top: 12px;
+  background-color: #16a34a;
+  width: 100%;
+  color: white;
+  padding: 8px 0;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-button:hover {
+  background-color: #145a32; /* تغيير اللون عند المرور بالماوس */
+}
+
+/* التنسيق لأزرار "Shop Now" في حالة سلة فارغة */
+.shop-now-button {
+  background-color: #16a34a;
+  padding: 12px 32px;
+  margin-top: 12px;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.shop-now-button:hover {
+  background-color: #145a32; /* تغيير اللون عند المرور بالماوس */
+}
+/* CartItem.css */
+
+/* الحاوية الرئيسية للمنتج */
+.cart-item {
+  width: 100%;
+  padding: 20px;
+  margin-top: 16px;
+  display: flex;
+  border-bottom: 2px solid #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+/* تأثير التحويم (Hover) على المنتج */
+.cart-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* قسم الصورة */
+.cart-item-image {
+  width: 170px;
+  height: 254px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* تأثير تحريك الصورة عند التمرير بالماوس */
+.cart-item:hover .cart-item-image {
+  transform: scale(1.05);
+}
+
+/* القسم الخاص بمعلومات المنتج */
+.cart-item-info {
+  flex-grow: 1;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* عنوان المنتج */
+.cart-item-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* تغيير اللون عند التمرير بالماوس */
+.cart-item:hover .cart-item-title {
+  color: #16a34a;
+}
+
+/* وصف المنتج */
+.cart-item-description {
+  font-size: 0.875rem;
+  color: #777;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* التنسيق للسعر */
+.cart-item-price {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #16a34a;
+  margin-top: 12px;
+}
+
+/* تنسيق أيقونة الحذف */
+.cart-item-delete {
+  background-color: #fcd8e5;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  justify-content: center;
+}
+
+.cart-item-delete:hover {
+  background-color: #ff6f91;
+  transform: scale(1.1);
+}
+
+/* تأثيرات النص عند الحذف */
+.cart-item-delete svg {
+  color: #e91e63;
+  transition: color 0.3s ease;
+}
+
+.cart-item-delete:hover svg {
+  color: #fff;
+}
+/* كارت*/
+/* التنسيق العام للـ Cart */
+.cart-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 16px;
+  position: relative;
+}
+
+/* حالة أنيميشن النجاح في الشراء */
+.checkout-success-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* خلفية مظللة */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 1s ease-out;
+}
+
+/* الرسالة الخاصة بنجاح الشراء */
+.checkout-success-message {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  animation: scaleUp 0.5s ease-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.checkout-success-message h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #16a34a; /* الأخضر الفاتح */
+}
+
+.checkout-success-message p {
+  font-size: 1.125rem;
+  color: #333;
+}
+
+/* أنيميشن لتكبير الرسالة */
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* أنيميشن للفيد إن للخلفية */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* التنسيق للسلة عندما تكون فارغة */
+.empty-cart {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* الأزرار */
+.shop-now-button,
+.checkout-button {
+  background-color: #16a34a;
+  padding: 12px 32px;
+  margin-top: 12px;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.shop-now-button:hover,
+.checkout-button:hover {
+  background-color: #145a32;
+}
